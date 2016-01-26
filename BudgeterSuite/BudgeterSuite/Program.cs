@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ExploratoryFormation
+namespace BudgeterSuite
 {
     static class Program
     {
@@ -17,8 +17,6 @@ namespace ExploratoryFormation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-            // I changed code here
         }
     }
 }
