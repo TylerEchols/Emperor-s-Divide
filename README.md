@@ -1,2 +1,2 @@
-# Emperor-s-Divide
-Excercises in coding. C# style.
+# EmperorsDivide
+I'm Tyler, a Computer Science major and professional geek.
