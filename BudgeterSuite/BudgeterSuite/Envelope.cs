@@ -67,14 +67,14 @@ namespace BudgeterSuite
         // Adds to balance and creates a ledger of the transaction
         // by checking whether there's room in history[] and making more if needed
         // then creating the ledger entry and increasing historyCount
-        public void NewTransaction(double num, string note)
+        public void NewTransaction(double change, string note)
         {
             if(!(historyCount < historyCap))
             {
                 AddHistory(historyCap);
             }
-            balance += num;
-            history[historyCount] = new Ledger(DateTime.Now, num, balance, note);
+            balance += change;
+            history[historyCount] = new Ledger(DateTime.Now, change, balance, note);
             historyCount++;
         }
 
