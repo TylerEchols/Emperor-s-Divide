@@ -54,9 +54,21 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Ledger.cs" />
+    <Compile Include="NewEnvelope.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEnvelope.Designer.cs">
+      <DependentUpon>NewEnvelope.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayDay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEnvelope.resx">
+      <DependentUpon>NewEnvelope.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

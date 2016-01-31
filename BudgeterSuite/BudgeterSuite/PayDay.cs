@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BudgeterSuite
 {
-    class PayDay
+    public class PayDay
     {
         Envelope[] envelopes;
-        int envCap = 8;
+        int envCap = 16;
         int envCount = 0; // Sits at next empty element for envelopes and payOuts
         double[] payOuts;                
 
@@ -50,15 +51,23 @@ namespace BudgeterSuite
 
         // Checks whether there's space, then adds Envelope and payOut
         // at [envCount] and increases envCount by 1
-        public void AddEnvelope(Envelope env, double pay)
+        public bool AddEnvelope(Envelope env, double pay)
         {
-            if(!(envCount < envCap))
+            if (envCount >= envCap)
             {
-                AddSpace(envCap);
+                bool denied = true;
+                //AddSpace(envCap);
+                MessageBox.Show("Sorry, but I've only figured out \nhow to cram 16 envelopes into this space. \nPlease check back in the next version :)");
+                return denied;
             }
-            envelopes[envCount] = env;
-            payOuts[envCount] = pay;
-            envCount++;
+            else
+            {
+                bool denied = false;
+                envelopes[envCount] = env;
+                payOuts[envCount] = pay;
+                envCount++;
+                return denied;
+            }
         }
 
         // Pay out to envelopes
@@ -69,10 +78,11 @@ namespace BudgeterSuite
                 envelopes[i].NewTransaction(payOuts[i], "Payday");
             }
         }
-
+        
         // Add envelopes[] and payouts[] space
         // Creates new arrays and copies the old elements into them
         // Doubles the size of envelopes[], payouts[], and envCap
+        /* Disabling this for now, because UI space is currently limited.
         public void AddSpace(int cap)
         {
             int newCap = cap * 2;
@@ -89,6 +99,7 @@ namespace BudgeterSuite
             envelopes = newEnvelopes;
             payOuts = newPayOuts;
             envCap = newCap;
-        }        
+        }
+        */        
     }
 }

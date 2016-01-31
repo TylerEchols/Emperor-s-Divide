@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgeterSuite
 {
-    class Envelope
+    public class Envelope
     {
         string name;
         double balance;

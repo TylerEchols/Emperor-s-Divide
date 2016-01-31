@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BudgeterSuite
 {
-    class Ledger
+    public class Ledger
     {
         DateTime timeStamp;
         double change;
