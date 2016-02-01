@@ -15,63 +15,45 @@ namespace BudgeterSuite
         public Form1()
         {
             InitializeComponent();
-            // if(CheckForSavedBudget()) == false { Initialize(); }
+            // if(CheckForSavedBudget(address)) == false { Initialize(); }
             // else load saved and set all values to saved values
             InitializeNewBudget();           
         }
         const int ENVCAP = 16; // Number of envelope buttons on the start page        
         int nextEnv = 1; // Next Envelope button to be .Show-ed
         public PayDay payDay = new PayDay();
+        Button[] envButtons = new Button[ENVCAP];
 
+        // Add all envelope buttons to envButtons[]
         // Set all envelope buttons = hidden
         // Set calculator labels = 0
         private void InitializeNewBudget()
         {
-            button1.Hide();
-            button2.Hide();
-            button3.Hide();
-            button4.Hide();
-            button5.Hide();
-            button6.Hide();
-            button7.Hide();
-            button8.Hide();
-            button9.Hide();
-            button10.Hide();
-            button11.Hide();
-            button12.Hide();
-            button13.Hide();
-            button14.Hide();
-            button15.Hide();
-            button16.Hide();
+            envButtons[0] = button1;
+            envButtons[1] = button2;
+            envButtons[2] = button3;
+            envButtons[3] = button4;
+            envButtons[4] = button5;
+            envButtons[5] = button6;
+            envButtons[6] = button7;
+            envButtons[7] = button8;
+            envButtons[8] = button9;
+            envButtons[9] = button10;
+            envButtons[10] = button11;
+            envButtons[11] = button12;
+            envButtons[12] = button13;
+            envButtons[13] = button14;
+            envButtons[14] = button15;
+            envButtons[15] = button16;
+            for (int i = 0; i < ENVCAP; i++)
+            {
+                envButtons[i].Hide();
+            }            
             payDayAmountLabel.Text = $"{0:C}";
             expenseLabel.Text = $"{0:C}";
             intoEnvelopeLabel.Text = $"{0:C}";
             payDayBalanceLabel.Text = $"{0:C}";
-        }
-
-        // Updates calculator labels
-        public void UpdateInfo()
-        {
-            // Will check how much the user gets in a paycheck
-            double payCheck = 0;
-            payDayAmountLabel.Text = $"{payCheck:C}";
-
-            // Will check the user's initial expenses
-            double expenses = 0;
-            expenseLabel.Text = $"{expenses:C}";
-
-            // Adds up payouts
-            double payOuts = 0;
-            for (int i = 0; i < payDay.GetEnvCount(); i++)
-            {
-                payOuts += payDay.GetPayOut(i);
-            }
-            intoEnvelopeLabel.Text = $"{payOuts:C}";
-
-            // Subtracts expenses and payouts from paycheck to update Payday Balance
-            double balance = payCheck - expenses - payOuts;
-            payDayBalanceLabel.Text = $"{balance:C}";
-        }
+        }        
 
         private void newEnvButton_Click(object sender, EventArgs e)
         {
@@ -80,10 +62,15 @@ namespace BudgeterSuite
         }
 
         // Sets button#(next).Text to payDay.GetEnvelope's respective name
-        // and sets button#(next) to Show() for buttons 1-16        
+        // and sets button#(next) to Show()       
         public void ShowNextEnvButton(int next)
         {
-            if(next == 1)
+            int index = next - 1;
+            Envelope env = payDay.GetEnvelope(index);
+            envButtons[index].Text = env.GetName();
+            envButtons[index].Show();
+            /*
+            if (next == 1)
             {
                 Envelope env = payDay.GetEnvelope(0);
                 button1.Text = env.GetName();
@@ -179,17 +166,35 @@ namespace BudgeterSuite
                 button16.Text = env.GetName();
                 button16.Show();
             }
+            */
         }
 
         // Getters and Setters
-        public int GetNextEnv()
-        {
-            return nextEnv;
-        }
+        public int GetNextEnv() { return nextEnv; }
 
-        public void SetNextEnv(int newNext)
+        public void SetNextEnv(int newNext) { nextEnv = newNext; }
+
+        // Expense Calculator Label Getters and Setters
+        public string GetPayDayAmountLabel() { return payDayAmountLabel.Text; }
+        public string GetExpenseLabel() { return expenseLabel.Text; }
+        public string GetIntoEnvelopeLabel() { return intoEnvelopeLabel.Text; }
+        public string GetPayDayBalanceLabel() { return payDayBalanceLabel.Text; }
+
+        public void SetPayDayAmountLabel(string _text)
         {
-            nextEnv = newNext;
+            payDayAmountLabel.Text = _text;
+        }
+        public void SetExpenseLabel(string _text)
+        {
+            expenseLabel.Text = _text;
+        }
+        public void SetIntoEnvelopeLabel(string _text)
+        {
+            intoEnvelopeLabel.Text = _text;
+        }
+        public void setPayDayBalanceLabel(string _text)
+        {
+            payDayBalanceLabel.Text = _text;
         }
     }
 }
