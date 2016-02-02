@@ -13,7 +13,7 @@ namespace BudgeterSuite
     public partial class ExpenseForm : Form
     {
         double payCheck = 0;
-        Expense[] expenses = new Expense[16];
+        Expense[] expenses = new Expense[15];
         int expenseCount = 0; // Sits at next open index for expenses[]
         Form1 form1;
 
@@ -36,7 +36,7 @@ namespace BudgeterSuite
         public void UpdateForm1Info()
         {
             // Will check and print how much the user gets in a paycheck
-            payCheck = double.Parse(PayCheckBox.Text());
+            payCheck = double.Parse(payCheckBox.Text);
             form1.SetPayDayAmountLabel($"{payCheck:C}");
 
             // Will check the and print user's total initial expenses
