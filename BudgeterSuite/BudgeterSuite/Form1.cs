@@ -26,7 +26,7 @@ namespace BudgeterSuite
 
         // Add all envelope buttons to envButtons[]
         // Set all envelope buttons = hidden
-        // Set calculator labels = 0
+        // Set expense labels = 0
         private void InitializeNewBudget()
         {
             envButtons[0] = button1;
@@ -34,11 +34,13 @@ namespace BudgeterSuite
             envButtons[2] = button3;
             envButtons[3] = button4;
             envButtons[4] = button5;
+
             envButtons[5] = button6;
             envButtons[6] = button7;
             envButtons[7] = button8;
             envButtons[8] = button9;
             envButtons[9] = button10;
+
             envButtons[10] = button11;
             envButtons[11] = button12;
             envButtons[12] = button13;
@@ -49,16 +51,24 @@ namespace BudgeterSuite
             {
                 envButtons[i].Hide();
             }            
-            payDayAmountLabel.Text = $"{0:C}";
-            expenseLabel.Text = $"{0:C}";
-            intoEnvelopeLabel.Text = $"{0:C}";
-            payDayBalanceLabel.Text = $"{0:C}";
+            payDayAmountLabel.Text = "0.00";
+            expenseLabel.Text = "0.00";
+            intoEnvelopeLabel.Text = "0.00";
+            payDayBalanceLabel.Text = "0.00";
         }        
 
+        // Opens NewEnvelope form
         private void newEnvButton_Click(object sender, EventArgs e)
         {
-            Form NewEnvelope = new NewEnvelope(this);
-            NewEnvelope.Show(); // the form, not the button            
+            Form newEnvelope = new NewEnvelope(this);
+            newEnvelope.Show(); // the form, not the button            
+        }
+
+        // Opens ExpenseForm form
+        private void editExpensesButton_Click(object sender, EventArgs e)
+        {
+            ExpenseForm expenseForm = new ExpenseForm(this);
+            expenseForm.Show();
         }
 
         // Sets button#(next).Text to payDay.GetEnvelope's respective name
@@ -68,105 +78,7 @@ namespace BudgeterSuite
             int index = next - 1;
             Envelope env = payDay.GetEnvelope(index);
             envButtons[index].Text = env.GetName();
-            envButtons[index].Show();
-            /*
-            if (next == 1)
-            {
-                Envelope env = payDay.GetEnvelope(0);
-                button1.Text = env.GetName();
-                button1.Show();
-            }
-            if (next == 2)
-            {
-                Envelope env = payDay.GetEnvelope(1);
-                button2.Text = env.GetName();
-                button2.Show();
-            }
-            if (next == 3)
-            {
-                Envelope env = payDay.GetEnvelope(2);
-                button3.Text = env.GetName();
-                button3.Show();
-            }
-            if (next == 4)
-            {
-                Envelope env = payDay.GetEnvelope(3);
-                button4.Text = env.GetName();
-                button4.Show();
-            }
-            if (next == 5)
-            {
-                Envelope env = payDay.GetEnvelope(4);
-                button5.Text = env.GetName();
-                button5.Show();
-            }
-            if (next == 6)
-            {
-                Envelope env = payDay.GetEnvelope(5);
-                button6.Text = env.GetName();
-                button6.Show();
-            }
-            if (next == 7)
-            {
-                Envelope env = payDay.GetEnvelope(6);
-                button7.Text = env.GetName();
-                button7.Show();
-            }
-            if (next == 8)
-            {
-                Envelope env = payDay.GetEnvelope(7);
-                button8.Text = env.GetName();
-                button8.Show();
-            }
-            if (next == 9)
-            {
-                Envelope env = payDay.GetEnvelope(8);
-                button9.Text = env.GetName();
-                button9.Show();
-            }
-            if (next == 10)
-            {
-                Envelope env = payDay.GetEnvelope(9);
-                button10.Text = env.GetName();
-                button10.Show();
-            }
-            if (next == 11)
-            {
-                Envelope env = payDay.GetEnvelope(10);
-                button11.Text = env.GetName();
-                button11.Show();
-            }
-            if (next == 12)
-            {
-                Envelope env = payDay.GetEnvelope(11);
-                button12.Text = env.GetName();
-                button12.Show();
-            }
-            if (next == 13)
-            {
-                Envelope env = payDay.GetEnvelope(12);
-                button13.Text = env.GetName();
-                button13.Show();
-            }
-            if (next == 14)
-            {
-                Envelope env = payDay.GetEnvelope(13);
-                button14.Text = env.GetName();
-                button14.Show();
-            }
-            if (next == 15)
-            {
-                Envelope env = payDay.GetEnvelope(14);
-                button15.Text = env.GetName();
-                button15.Show();
-            }
-            if (next == 16)
-            {
-                Envelope env = payDay.GetEnvelope(15);
-                button16.Text = env.GetName();
-                button16.Show();
-            }
-            */
+            envButtons[index].Show();            
         }
 
         // Getters and Setters
@@ -192,9 +104,10 @@ namespace BudgeterSuite
         {
             intoEnvelopeLabel.Text = _text;
         }
-        public void setPayDayBalanceLabel(string _text)
+        public void SetPayDayBalanceLabel(string _text)
         {
             payDayBalanceLabel.Text = _text;
         }
+
     }
 }

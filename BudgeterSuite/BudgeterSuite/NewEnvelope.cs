@@ -34,7 +34,12 @@ namespace BudgeterSuite
             {
                 form1.ShowNextEnvButton(form1.GetNextEnv());
                 form1.SetNextEnv(form1.GetNextEnv() + 1);
-                form1.UpdateInfo();
+                double bal = 0;
+                form1.SetIntoEnvelopeLabel(Convert.ToString(payOut));
+                bal += double.Parse(form1.GetPayDayAmountLabel());
+                bal -= double.Parse(form1.GetExpenseLabel());
+                bal -= double.Parse(form1.GetIntoEnvelopeLabel());
+                form1.SetPayDayBalanceLabel(Convert.ToString(bal));
             }
             this.Close();                     
         }

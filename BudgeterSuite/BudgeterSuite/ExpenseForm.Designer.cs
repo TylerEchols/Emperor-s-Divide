@@ -472,7 +472,7 @@
             this.payCheckBox.Name = "payCheckBox";
             this.payCheckBox.Size = new System.Drawing.Size(100, 20);
             this.payCheckBox.TabIndex = 46;
-            this.payCheckBox.Text = "Cost/Payday";
+            this.payCheckBox.Text = "0.00";
             // 
             // clearButton
             // 
@@ -483,6 +483,7 @@
             this.clearButton.TabIndex = 47;
             this.clearButton.Text = "Clear All";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // saveButton
             // 
@@ -493,6 +494,7 @@
             this.saveButton.TabIndex = 48;
             this.saveButton.Text = "Save Expenses";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // showButton1
             // 
@@ -503,6 +505,7 @@
             this.showButton1.TabIndex = 49;
             this.showButton1.Text = "Show More";
             this.showButton1.UseVisualStyleBackColor = true;
+            this.showButton1.Click += new System.EventHandler(this.showButton1_Click);
             // 
             // showButton2
             // 
@@ -513,6 +516,7 @@
             this.showButton2.TabIndex = 50;
             this.showButton2.Text = "Show More";
             this.showButton2.UseVisualStyleBackColor = true;
+            this.showButton2.Click += new System.EventHandler(this.showButton2_Click);
             // 
             // ExpenseForm
             // 
