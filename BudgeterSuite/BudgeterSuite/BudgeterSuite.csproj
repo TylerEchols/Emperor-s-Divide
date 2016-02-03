@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Envelope.cs" />
+    <Compile Include="EnvelopeDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnvelopeDetailsForm.Designer.cs">
+      <DependentUpon>EnvelopeDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense.cs" />
     <Compile Include="ExpenseForm.cs">
       <SubType>Form</SubType>

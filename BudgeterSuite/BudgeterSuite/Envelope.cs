@@ -66,7 +66,7 @@ namespace BudgeterSuite
 
         // Adds to balance and creates a ledger of the transaction
         // by checking whether there's room in history[] and making more if needed
-        // then creating the ledger entry and increasing historyCount
+        // then changing balance, creating the ledger entry and increasing historyCount
         public void NewTransaction(double change, string note)
         {
             if(!(historyCount < historyCap))
@@ -79,6 +79,7 @@ namespace BudgeterSuite
         }
 
         // Doubles capacity of history[] and size of historyCap
+        // by creating a newHistory[] and copying the old entries into it
         public void AddHistory(int cap)
         {
             int newCap = cap * 2;

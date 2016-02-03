@@ -133,7 +133,7 @@ namespace BudgeterSuite
             payCheck = double.Parse(payCheckBox.Text);
             form1.SetPayDayAmountLabel($"{payCheck:C}");
 
-            // Chekcs and prints user's total initial expenses
+            // Checks and prints user's total initial expenses
             double totalExpenses = 0;
             for (int i = 0; i < EXPENSE_MAX; i++)
             {
