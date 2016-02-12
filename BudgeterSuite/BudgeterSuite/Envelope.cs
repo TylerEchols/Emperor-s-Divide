@@ -55,7 +55,7 @@ namespace BudgeterSuite
         {
             return balance;
         }
-        public Ledger GetHistory(int id)
+        public Ledger GetLedger(int id)
         {
             return history[id];
         }
@@ -63,6 +63,7 @@ namespace BudgeterSuite
         {
             return leftOvers[id];
         }
+        public Ledger[] GetFullHistory() { return history; }
 
         // Adds to balance and creates a ledger of the transaction
         // by checking whether there's room in history[] and making more if needed

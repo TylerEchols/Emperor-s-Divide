@@ -15,14 +15,20 @@ namespace BudgeterSuite
         Form1 form1;
         int id;
         Envelope envelope;
-        Ledger ledger;
+        Ledger[] history;
 
         public EnvelopeDetailsForm(Form1 _form1, int id)
         {
             InitializeComponent();
             form1 = _form1;
             envelope = form1.payDay.GetEnvelope(id);
-            ledger = envelope.GetHistory();
+            history = envelope.GetFullHistory();
+            PopulateInfo();
+        }
+
+        public void PopulateInfo()
+        {
+            this.Text = envelope.GetName();
         }
     }
 }

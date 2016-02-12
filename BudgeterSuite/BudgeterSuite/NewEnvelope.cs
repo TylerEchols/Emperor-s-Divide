@@ -35,6 +35,7 @@ namespace BudgeterSuite
                 form1.ShowNextEnvButton(form1.GetNextEnv());
                 form1.SetNextEnv(form1.GetNextEnv() + 1);
                 double bal = 0;
+                // Update Form1's expense labels
                 form1.SetIntoEnvelopeLabel(Convert.ToString(payOut));
                 bal += double.Parse(form1.GetPayDayAmountLabel());
                 bal -= double.Parse(form1.GetExpenseLabel());

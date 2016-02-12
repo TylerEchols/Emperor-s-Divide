@@ -301,9 +301,9 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(478, 267);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.Size = new System.Drawing.Size(115, 16);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Current Balance:";
+            this.label1.Text = "Current Balance: $";
             // 
             // balanceLabel
             // 
@@ -321,9 +321,9 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(476, 314);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 16);
+            this.label2.Size = new System.Drawing.Size(117, 16);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Pay Day Amount:";
+            this.label2.Text = "Pay Day Amount: $";
             // 
             // payDayAmountLabel
             // 
@@ -341,9 +341,9 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(516, 330);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 16);
+            this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 24;
-            this.label3.Text = "Expenses:";
+            this.label3.Text = "Expenses: $";
             // 
             // expenseLabel
             // 
@@ -361,9 +361,9 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(486, 346);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 16);
+            this.label4.Size = new System.Drawing.Size(107, 16);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Into Envelopes:";
+            this.label4.Text = "Into Envelopes: $";
             // 
             // intoEnvelopeLabel
             // 
@@ -381,9 +381,9 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(476, 362);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 16);
+            this.label5.Size = new System.Drawing.Size(117, 16);
             this.label5.TabIndex = 28;
-            this.label5.Text = "Pay Day Balance:";
+            this.label5.Text = "Pay Day Balance: $";
             // 
             // payDayBalanceLabel
             // 
@@ -391,9 +391,9 @@
             this.payDayBalanceLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payDayBalanceLabel.Location = new System.Drawing.Point(588, 362);
             this.payDayBalanceLabel.Name = "payDayBalanceLabel";
-            this.payDayBalanceLabel.Size = new System.Drawing.Size(15, 16);
+            this.payDayBalanceLabel.Size = new System.Drawing.Size(33, 16);
             this.payDayBalanceLabel.TabIndex = 29;
-            this.payDayBalanceLabel.Text = "Z";
+            this.payDayBalanceLabel.Text = "0.00";
             // 
             // editExpensesButton
             // 
@@ -447,7 +447,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "BudgeterSuite v0.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 

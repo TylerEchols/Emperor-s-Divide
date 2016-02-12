@@ -131,7 +131,7 @@ namespace BudgeterSuite
         {
             // Checks and prints how much the user gets in a paycheck
             payCheck = double.Parse(payCheckBox.Text);
-            form1.SetPayDayAmountLabel($"{payCheck:C}");
+            form1.SetPayDayAmountLabel($"{payCheck:0.00}");
 
             // Checks and prints user's total initial expenses
             double totalExpenses = 0;
@@ -139,7 +139,7 @@ namespace BudgeterSuite
             {
                 totalExpenses += expenses[i].GetCost();
             }
-            form1.SetExpenseLabel($"{totalExpenses:C}");
+            form1.SetExpenseLabel($"{totalExpenses:0.00}");
 
             // Adds up and prints envelope payouts
             double payOuts = 0;
@@ -147,11 +147,11 @@ namespace BudgeterSuite
             {
                 payOuts += form1.payDay.GetPayOut(i);
             }
-            form1.SetIntoEnvelopeLabel($"{payOuts:C}");
+            form1.SetIntoEnvelopeLabel($"{payOuts:0.00}");
 
             // Subtracts expenses and payouts from paycheck to update Payday Balance label
             double balance = payCheck - totalExpenses - payOuts;
-            form1.SetPayDayBalanceLabel($"{balance:C}");
+            form1.SetPayDayBalanceLabel($"{balance:0.00}");
         }
 
         // Getters and Setters

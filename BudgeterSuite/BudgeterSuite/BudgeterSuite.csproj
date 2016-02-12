@@ -76,6 +76,9 @@
     <Compile Include="PayDay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EnvelopeDetailsForm.resx">
+      <DependentUpon>EnvelopeDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExpenseForm.resx">
       <DependentUpon>ExpenseForm.cs</DependentUpon>
     </EmbeddedResource>

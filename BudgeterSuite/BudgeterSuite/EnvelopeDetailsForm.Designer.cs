@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // EnvelopeDetailsForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Name = "EnvelopeDetailsForm";
             this.Text = "EnvelopeDetailsForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
